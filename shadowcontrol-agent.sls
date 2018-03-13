@@ -5,11 +5,11 @@
     {% set PROGRAM_FILES = "%ProgramFiles%" %}
 {% endif %}
 shadowcontrol-agent:
-  '2.8':
+  '4.0.0':
     full_name: 'StorageCraft ShadowControl'
     installer: 'https://downloads.storagecraft.com/_shadowcontrol/ShadowControl_Installer_4.0_en.msi'
     install_flags: '/quiet'
-    uninstaller: '{{ PROGRAM_FILES }}\ossec-agent\uninstall.exe'
+    uninstaller: 'https://downloads.storagecraft.com/_shadowcontrol/ShadowControl_Installer_4.0_en.msi'
     uninstall_flags: '/uninstall'
     msiexec: True
     locale: en_US
