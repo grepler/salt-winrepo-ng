@@ -3,15 +3,21 @@
 # place these in the 'eset-remote-agent-config\client-configs' folder on your pillar.
 # Also include one 'Default-install_config.ini' file, which is not associated with an ERA static group.
 # Targetting the ini file requires that each machine has an 'organization' key that maps to the oeganization prefix (e.g. 'XYZ')
-
-write_era_configuration_file:
-  file.managed:
-    - name: '%TEMP%\era-install-config.ini'
-    - contents_pillar: base:eset-remote-agent-config:client-configs:{{ salt['pillar.get']('organization', 'Default') }}-install_config.ini
-    - makedirs: True
-    - show_changes: True
-
 # This version will only install the 64-bit installer.
+#
+# I have an sls in my tree with the below:
+#write_era_configuration_file:
+#  file.managed:
+#    - name: '%TEMP%\era-install-config.ini'
+#    - contents_pillar: base:eset-remote-agent-config:client-configs:{{ salt['pillar.get']('organization', 'Default') }}-install_config.ini
+#    - makedirs: True
+#    - show_changes: True
+#
+#eset-remote-agent:
+#  pkg:
+#    - installed
+#  require:
+#    - write_era_configuration_file
 
 eset-remote-agent:
   'latest':
