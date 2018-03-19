@@ -1,3 +1,6 @@
+# unfortunately this does not work as intended, because the installer is run as a system process.
+# MS Teams must be run as the local user at the moment.
+
 # only using 32-bit x86 installer
 {% if grains['cpuarch'] == 'AMD64' %}
     {% set PROGRAM_FILES = "%ProgramFiles(x86)%" %}
